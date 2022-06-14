@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="row page">
+	<div class="col-xs-12 text-center">
+		<h1>逼乎Spider</h1>
+		<p>爬取知乎用户信息及文章与评论<br>
+		</br>
+		</p>
+		<p>耗时较长 请耐心等待
+		</p>
+		<form role="search" class="navbar-form" action="search" method="post">
+			<div class="form-group">
+				<input type="text" name="name" placeholder="请输入用户token"
+					class="search form-control clearable"><input type="hidden" name="page"
+					value="1"><button class="btn btn-primary" type="submit">开始爬取</button>
+			</div>
+		</form>
+		<span class="package-amount">例如：https://www.zhihu.com/people/this_is_a_template_1中的token为this_is_a_template_1</span>
+	</div>
+</div>
+{% endblock %}
