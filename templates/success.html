@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="row page">
+	<div class="col-xs-12 text-center">
+		<h1>登陆成功</h1>
+		<p>可以开始爬取知乎用户信息及文章与评论
+		</p>
+		<form action = "search" method = "get">
+			<p><input class="button_box_s" type = "submit" value = "开始爬取" /></p>
+		</form>
+		<h1>本次登录的cookie值:</h1>
+		<table border="1">
+		{% for key,value in login_cookie %}
+			<tr>
+			<td style="font-size:16px">{{key}}</td>
+			<td>{{value}}</td>
+			</tr>
+		{% endfor %}
+		</table>
+	</div>
+</div>
+{% endblock %}
