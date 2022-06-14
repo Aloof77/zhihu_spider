@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="zhihu_spider能够爬取指定用户信息，用户关注和粉丝信息以及用户的文章回答的动态" name="description">
+	<meta content="知乎爬虫" name="keywords">
+	<meta content="gmy" name="author">
+	<title>逼乎Spider</title>
+	<link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../static/index.css" rel="stylesheet" type="text/css">
+	<link href="../static/success.css" rel="stylesheet" type="text/css">
+	<link href="../static/result.css" rel="stylesheet" type="text/css">
+	<link href="{{ url_for('static', filename='favicon.ico') }}" mce_href="favicon.ico" rel="icon" type="image/x-icon" />
+	<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body class="container">
+
+	<header class="row">
+		<!-- 导航栏 -->
+		<nav class="col-md-12 navbar navbar-default navbar-static-top" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://127.0.0.1:5000">主页</a>
+			</div>
+		</nav>
+	</header>
+
+{% block body %}{% endblock %}
+
+	<footer class="footer">
+		<span>&copy; 2022</span> Powered by
+		<a target="_blank" href="https://github.com/Selenium/selenium">Selenium</a>,
+		<a target="_blank" href="https://github.com/pallets/flask/">Flask</a> and
+		<a target="_blank" href="https://github.com/twbs/bootstrap/">Bootstrap</a>
+	</footer>
+
+	<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+	<script src="{{ url_for('static', filename='page.js') }}"></script>
+	<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>
