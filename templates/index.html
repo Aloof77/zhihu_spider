@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="login_box">
+	<h1 class="title">请先登录</h1>
+<form method="post" action="/">
+	<input class="input_box" placeholder="手机号" type="text" name="username"><br>
+	<input class="input_box" placeholder="Password" type="text" name="password"><br>
+	<button class="button_box" type="submit" value="submit">登 录</button>
+</form>
+</div>
+<!-- End Login Screen -->
+{% endblock %}
+
