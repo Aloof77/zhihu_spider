@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+{% block body %}
+<button class="result_button" type="button"  onclick="javascript:location.reload()">刷新</button>
+		<h1 class="result_title">用户个人信息</h1>
+		<table border="1">
+		<tr>
+		<td class=" result_td">用户名</td>
+		<td class=" result_td">{{entries1.username}}</td>
+		</tr>
+		<tr>
+		<td class=" result_td">一句话介绍</td>
+		<td class=" result_td">{{entries1.introduce}}</td>
+		</tr>
+		<tr>
+		<td class=" result_td">居住地</td>
+		<td class=" result_td">{{entries1.address}}</td>
+		</tr>
+		<tr>
+		<td class=" result_td">所在行业</td>
+		<td class=" result_td">{{entries1.industry}}</td>
+		</tr>
+		<tr>
+		<td class=" result_td">职业经历</td>
+		<td class=" result_td">{{entries1.profession}}</td>
+		</tr>
+		<tr>
+		<td class=" result_td">教育经历</td>
+		<td class=" result_td">{{entries1.education}}</td>
+		</tr>
+		<tr>
+		<td class=" result_td">个人简介</td>
+		<td class=" result_td">{{entries1.introduce}}</td>
+		</tr>
+		</table>
+
+	<h1 class="result_title">关注者</h1>
+	<table border="1">
+	{% for entry in entries2 %}
+		<tr>
+		<td class=" result_td">用户昵称</td>
+		<td class=" result_td">{{entry.following_name}}</td>
+		</tr>
+		<tr>
+		<td class=" result_td">链接地址</td>
+		<td class=" result_td">{{entry.following_ID}}</td>
+		</tr>
+		<tr>
+		<td class=" result_td">回答问题数、文章数、关注者人数</td>
+		<td class=" result_td">{{entry.following_info}}</td>
+		</tr>
+	{% endfor %}
+	</table>
+
+	<h1 class="result_title">粉丝</h1>
+	<table border="1">
+	{% for entry in entries3 %}
+		<tr>
+		<td class=" result_td">用户昵称</td>
+		<td class=" result_td">{{entry.follower_name}}</td>
+		</tr>
+		<tr>
+		<td class=" result_td">链接地址</td>
+		<td class=" result_td">{{entry.follower_ID}}</td>
+		</tr>
+		<tr>
+		<td class=" result_td">回答问题数、文章数、关注者人数</td>
+		<td class=" result_td">{{entry.follower_info}}</td>
+		</tr>
+	{% endfor %}
+	</table>
+
+	<h1 class="result_title">动态信息</h1>
+	<table border="1">
+	{% for answer,comment in entries4 %}
+		<tr>
+		<td class=" result_td">发帖时间</td>
+		<td class=" result_td">{{answer.time}}</td>
+		</tr>
+		<tr>
+		<td class=" result_td">发帖内容</td>
+		<td class=" result_td">{{answer.content}}</td>
+		</tr>
+		<tr>
+		<td class=" result_td">点赞次数</td>
+		<td class=" result_td">{{answer.agree}}</td>
+		</tr>
+		<tr>
+		<td class=" result_td">评论次数</td>
+		<td class=" result_td">{{answer.commentnum}}</td>
+		</tr>
+		{% for comments in comment %}
+			</tr>
+			<tr>
+			<td class=" result_td">评论人ID</td>
+			<td class=" result_td">{{comments.ID}}</td>
+			</tr>
+			<tr>
+			<td class=" result_td">评论人昵称</td>
+			<td class=" result_td">{{comments.name}}</td>
+			</tr>
+			<tr>
+			<td class=" result_td">评论时间</td>
+			<td class=" result_td">{{comments.time}}</td>
+			</tr>
+			<tr>
+			<td class=" result_td">评论内容</td>
+			<td class=" result_td">{{comments.conten}}</td>
+			</tr>
+			<tr>
+			<td class=" result_td">点赞次数</td>
+			<td class=" result_td">{{comments.agree}}</td>
+			</tr>
+		{% endfor %}
+	{% endfor %}
+	</table>
+{% endblock %}
